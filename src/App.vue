@@ -1,47 +1,35 @@
 <script setup lang="ts">
-import HelloWorld from './components/HelloWorld.vue'
-import TheWelcome from './components/TheWelcome.vue'
 </script>
 
 <template>
-  <header>
-    <img alt="Vue logo" class="logo" src="./assets/logo.svg" width="125" height="125" />
-
-    <div class="wrapper">
-      <HelloWorld msg="You did it!" />
+  <div class="flex flex-column height-100">
+    <div class="excel-bars">
+      <div class="menubars"></div>
+      <div class="toolbars"></div>
     </div>
-  </header>
 
-  <main>
-    <TheWelcome />
-  </main>
+    <div class="excel-editor border-1 height-100"></div>
+  </div>
 </template>
 
-<style scoped>
-header {
-  line-height: 1.5;
-}
+<style lang="scss" scoped>
+@import '@/assets/variables.scss';
 
-.logo {
-  display: block;
-  margin: 0 auto 2rem;
-}
+.excel-bars {
+  background-color: rgb($menubar-background-color, 0.3);
 
-@media (min-width: 1024px) {
-  header {
-    display: flex;
-    place-items: center;
-    padding-right: calc(var(--section-gap) / 2);
+  .menubars {
+    height: 33px;
   }
 
-  .logo {
-    margin: 0 2rem 0 0;
-  }
-
-  header .wrapper {
-    display: flex;
-    place-items: flex-start;
-    flex-wrap: wrap;
+  .toolbars {
+    background-color: $menubar-background-color;
+    border: none;
+    border-radius: 24px;
+    margin: 6px 16px 8px 16px;
+    min-height: 40px;
+    padding: 0 8px;
+    -webkit-font-smoothing: antialiased;
   }
 }
 </style>
